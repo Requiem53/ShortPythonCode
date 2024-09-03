@@ -28,6 +28,8 @@ def ginortS(s: str) -> str:
     stringList = [lowercase, uppercase, odd, even]
         
     return ''.join([''.join(string) for string in stringList])
+# print(ginortS("Sorting1234"))
+
 
 # wtf na answer sa babaw
 # S = input()
@@ -44,6 +46,7 @@ def ginortS(s: str) -> str:
 
 # print(*sorted(S, key=s), sep='')
 
+
 #Capitalize first letter
 def capitalizeFirst(s : str) -> str:
     spaced = s.split(' ')
@@ -51,6 +54,8 @@ def capitalizeFirst(s : str) -> str:
     for name in spaced:
         full.append(name.capitalize())
     return ' '.join(full)
+# print(capitalizeFirst("hello world"))
+
 
 #Valid Parentheses
 def isValid(s: str) -> bool:
@@ -66,6 +71,8 @@ def isValid(s: str) -> bool:
             return False
 
     return ack == []
+# print(isValid("({[}])"))
+
 
 #Longest common prefix
 def longestCommonPrefix(strs: List[str]) -> str:
@@ -79,6 +86,8 @@ def longestCommonPrefix(strs: List[str]) -> str:
         ans += s
     
     return ans
+# print(longestCommonPrefix(["flower", "flow", "flight"]))
+
 
 #Roman to Int
 def romanToInt(s: str) -> int:
@@ -99,13 +108,18 @@ def romanToInt(s: str) -> int:
     for char in s:
         number += translations[char]
     return number
+# print(romanToInt("CMXVII"))
+
 
 #Palindrome
 def isPalindrome(x: int) -> bool:
     a = str(x)
     return a == a[::-1] 
+# print(isPalindrome(505))
+
 
 #Two sum
+#Two numbers from list add up to target then return indices
 def twoSum(nums: List[int], target: int) -> List[int]:
     n = len(nums)
     for i in range(n-1):
@@ -113,8 +127,11 @@ def twoSum(nums: List[int], target: int) -> List[int]:
             if nums[i] + nums[j] == target:
                 return [i,j]
     return []
+# print(twoSum([2,11,7,5], 9))
+
 
 #Fibonacci get term in x
 fib = lambda x: x if x <2 else fib(x-1) + fib(x-2)
+# print(fib(5))
 
 
