@@ -38,6 +38,8 @@ def manyParams(a,b,c):
     return a+b+c
 numList = [10,40,50]
 # print(manyParams(*numList))
+#Could also be used to print list
+# print(*numList, sep=' ')
 
 #9,10 - Ternary operator
 num9 = 10
@@ -54,7 +56,7 @@ string11 = "The price will be {0:.2f}".format(49)
 #Capital X for capital hexidecimal
 #:b for binary
 string12 = "The Hexadecimal version of {0} is {0:X}".format(255)
-print(string12)
+# print(string12)
 
 #13,14 Percentage format
 txt13 = "You scored {:%}"
@@ -64,3 +66,17 @@ txt13 = "You scored {:%}"
 
 txt14 = "You scored {:.0%}"
 # print(txt14.format(0.25))
+
+#15 Format Function
+# print(format(53, "08b"))
+
+#16 Fill string with zeroes up to length for string
+# print("12".zfill(5))
+
+#17 Any() function returns if any item is true
+mylist17 = [False, True, False]
+# print(any(mylist17))
+
+#18 You can multiply truth value to string
+number18 = 5
+# print("Even" * (number18%2==0) + "Odd" * (number18%2!=0))

@@ -1,4 +1,24 @@
 from typing import List
+#One liner Fizz Buzz
+#Fizz if divisible by 3, Buzz if divisible by 5, FizzBuzz if both
+print('\n'.join('Fizz' * (i%3==0) + 'Buzz' * (i%5==0) or str(i) for i in range(1,101)))
+
+
+# You are given two positive integers n and k.
+# You can choose any bit in the binary representation of n that is equal to 1 and change it to 0.
+# Return the number of changes needed to make n equal to k. If it is impossible, return -1.
+
+def minChanges(n: int, k: int) -> int:
+    if n == k:
+        return 0
+    n_binary = format(n, "b").zfill(32)
+    k_binary = format(k, "b").zfill(32)
+    if any(k_binary[i] == "1" and n_binary[i] == "0" for i in range(len(n_binary))):
+        return -1
+    return sum(k_binary[i] == "0" and n_binary[i] == "1" for i in range(len(n_binary)))
+# print(minChanges(13,4))
+        
+
 #Given string, all sorted lowercase letters are ahead of uppercase
 #All sorted uppercase are ahead of digits
 #All sorted odd digits are ahead of even digits
