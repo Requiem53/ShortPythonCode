@@ -51,21 +51,25 @@ num10 = 20
 #11 Decimal places string format
 string11 = "The price will be {0:.2f}".format(49)
 # print(string11)
+# print(f"The price will be {49:.2f}")
 
 #12 Hexadecimal string format
 #Capital X for capital hexidecimal
 #:b for binary
 string12 = "The Hexadecimal version of {0} is {0:X}".format(255)
 # print(string12)
+# print(f"The binary version of {55} is {55:08b}")
 
 #13,14 Percentage format
 txt13 = "You scored {:%}"
 # print(txt13.format(0.25))
+# print(f"You scored {0.25:%}")
 
 #Or, without any decimals:
 
 txt14 = "You scored {:.0%}"
 # print(txt14.format(0.25))
+# print(f"You scored {0.25:.0%}")
 
 #15 Format Function
 # print(format(53, "08b"))
@@ -80,3 +84,25 @@ mylist17 = [False, True, False]
 #18 You can multiply truth value to string
 number18 = 5
 # print("Even" * (number18%2==0) + "Odd" * (number18%2!=0))
+
+#19 Set comprehension
+student_scores19 = {'Alice': 80, 'Bob': 65, 'Charlie': 90, 'Dana': 76}
+above75_scores19 = {x:y for(x,y) in sorted(student_scores19.items(), key = lambda x: x[1], reverse=True) if y > 75}
+# print(above75_scores19)
+
+#20 Dictionary Comprehension
+classroom20 = {
+    'Alice': {'age': 22, 'grades': ['A', 'B+', 'A-']},
+    'Bob': {'age': 23, 'grades': ['B', 'B-', 'C+']},
+    'Charlie': {'age': 24, 'grades': ['B', 'B-', 'C+']}
+}
+age_map20 = {x:y['age'] for x, y in classroom20.items() if y['age'] >= 23}
+# print(age_map20)
+
+#21 Check for NoneType
+dict21 = {}
+# print("None" if dict21.get('element') is None else print("Exists"))
+
+#22 Thousands separator
+population22 = 19677225658
+# print(f"Earth's population peaked at {population22:,}.")
